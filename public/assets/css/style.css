@@ -72,8 +72,8 @@ body {
 }
 
 #titleinfo {
-	position: absolute;
-	top: 50%;
+	position: relative;
+	margin-top: 23%;
 	font-family: proxima-nova;
 	letter-spacing: .1em;
 }
