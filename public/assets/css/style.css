@@ -73,7 +73,8 @@ body {
 
 #titleinfo {
 	position: relative;
-	margin-top: 23%;
+	margin-top: 25%;
+	margin-bottom: 25%;
 	font-family: proxima-nova;
 	letter-spacing: .1em;
 }
