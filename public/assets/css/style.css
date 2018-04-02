@@ -141,11 +141,11 @@ body {
 }
 
 .wrapper {
-
+  /*visibility: hidden;*/
 }
 
 .wrapper2 {
-  /*visibility: hidden;*/
+
 }
 
 .project {
@@ -240,6 +240,18 @@ a, a:hover {
 		font-size: 1em;
 	}
 }
+@media only screen and (max-width: 767px) { 
+
+	.technologiesused, .projecttitles, .projecttitles2 {
+		visibility: visible;
+	}
+
+	.project {
+		opacity: .3;
+	}
+
+
+ }
 
  /*Medium devices (tablets, 768px and up)*/
 @media only screen and (min-width: 768px) { 
