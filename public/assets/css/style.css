@@ -163,6 +163,7 @@ body {
   -o-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
   font-style: italic;
+  font-weight: bold;
   color: white;
   left: 50%;
   position: absolute;

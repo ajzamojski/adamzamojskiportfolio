@@ -2,11 +2,9 @@
 
 // mouseover effects for portfolio tab
 $(document).ready(function() {
-	// if ($(window).width() > 767) {
 	// **************** Portfolio hover effects ********************
 		$('.wrapper').mouseover(function() {
 			if ($(window).width() > 752) {
-					console.log(this);
 			  $(this).find("img").css({
 			  	"opacity" : ".3"
 			  });
@@ -41,10 +39,6 @@ $(document).ready(function() {
 	  		'filter' : 'grayscale(100%)'
 			})
 		});
-	
-	// else {
-	// 	console.log("window width is small");
-	// }
 });
 
 
