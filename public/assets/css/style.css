@@ -79,6 +79,15 @@ body {
 	letter-spacing: .1em;
 }
 
+.trio {
+	display: none;
+}
+
+.trioitem {
+	float: right;
+	padding: 0px 8px;
+}
+
 /* Section two styles
 -------------------------------------------------- */
 #adambwjpg {
@@ -251,7 +260,6 @@ a, a:hover {
 		opacity: .3;
 	}
 
-
  }
 
  /*Medium devices (tablets, 768px and up)*/
@@ -280,6 +288,17 @@ a, a:hover {
 	#quotetwo {
 		font-size: 1.2em;
 	}
+}
+@media only screen and (max-width: 991px) {
+
+	.trio {
+		display: inline;
+	}
+
+	.originaltrio {
+		display: none;
+	}
+
 }
 
 /*Extra large devices (large desktops, 1200px and up)*/
