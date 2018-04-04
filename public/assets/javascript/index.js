@@ -39,6 +39,20 @@ $(document).ready(function() {
 	  		'filter' : 'grayscale(100%)'
 			})
 		});
+
+		$("#formbutton").click(function(event){
+			console.log("button has been clicked");
+			event.preventDefault();
+
+			$.ajax({
+				type: 'POST',
+				data: $("#email_form").serializeArray(),
+				url: 'send_form_email.php'
+			}).done(function(msg){
+				console.log(msg);
+			});
+			
+		});
 });
 
 
