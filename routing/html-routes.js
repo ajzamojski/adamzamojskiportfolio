@@ -37,13 +37,16 @@ module.exports = function(app) {
 			      clientSecret: process.env.CLIENT_SECRET,
 			      refreshToken: process.env.REFRESH_TOKEN
 				}
-			});
+			},
+			{
+				from: req.body.first_name + " " + req.body.last_name + " " + req.body.email
+			}
+			);
 
 			let mailOptions = 
 			  {
-			    from: req.body.first_name + " " + req.body.last_name + " <" + req.body.email +">",
 			    to: 'ajzamojski@gmail.com',
-			    subject: 'Sending Email using Node.js',
+			    subject: 'Portfolio Contact',
 			    text: req.body.comments
 			    // html:'<p><ul><li>this a a simple test from Name:'+ req.body.name+'</li><li> Email:'+req.body.email+'</li><li>Message:'+req.body.message+'</li></ul>',
 			  }
