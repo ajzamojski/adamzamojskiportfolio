@@ -45,6 +45,7 @@ module.exports = function(app) {
 
 			let mailOptions = 
 			  {
+			  	from: req.body.first_name + " " + req.body.last_name + " " + req.body.email,
 			    to: 'ajzamojski@gmail.com',
 			    subject: 'Portfolio Contact',
 			    text: req.body.comments
