@@ -32,10 +32,8 @@ module.exports = function(app) {
 				secure: true,
 			  auth: {
 			  		type: 'OAuth2',
-			  		user: process.env.MY_EMAIL,
 			      clientId: process.env.CLIENT_ID,
 			      clientSecret: process.env.CLIENT_SECRET,
-			      refreshToken: process.env.REFRESH_TOKEN
 				}
 			},
 			{
@@ -48,7 +46,12 @@ module.exports = function(app) {
 			  	from: req.body.first_name + " " + req.body.last_name + " " + req.body.email,
 			    to: 'ajzamojski@gmail.com',
 			    subject: 'Portfolio Contact',
-			    text: req.body.comments
+			    text: req.body.comments,
+			    auth: {
+			    		user: process.env.MY_EMAIL,
+			    		refreshToken: process.env.REFRESH_TOKEN,
+			      	accessToken: process.env.ACCESS_TOKEN
+			    }
 			    // html:'<p><ul><li>this a a simple test from Name:'+ req.body.name+'</li><li> Email:'+req.body.email+'</li><li>Message:'+req.body.message+'</li></ul>',
 			  }
 			  console.log(mailOptions);
