@@ -46,15 +46,13 @@ module.exports = function(app) {
 			  	from: req.body.first_name + " " + req.body.last_name + " " + req.body.email,
 			    to: 'ajzamojski@gmail.com',
 			    subject: 'Portfolio Contact',
-			    text: req.body.comments,
 			    auth: {
 			    		user: process.env.MY_EMAIL,
 			    		refreshToken: process.env.REFRESH_TOKEN,
 			      	accessToken: process.env.ACCESS_TOKEN
-			    }
-			    // html:'<p><ul><li>this a a simple test from Name:'+ req.body.name+'</li><li> Email:'+req.body.email+'</li><li>Message:'+req.body.message+'</li></ul>',
+			    },
+			    html:'<p><ul><li>Portfolio contact from: '+ req.body.first_name + " " + req.body.last_name + '</li><li> Email: ' + req.body.email+ '</li><li>Message: ' + req.body.comments + '</li></ul>'
 			  }
-			  console.log(mailOptions);
 			  transporter.sendMail(mailOptions, function (err, info)
 			  {
 			    if(err)
