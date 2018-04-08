@@ -42,17 +42,29 @@ $(document).ready(function() {
 
 		$("#formbutton").click(function(event){
 			console.log("button has been clicked");
-			// event.preventDefault();
+			event.preventDefault();
+			let formbody = {
+				first_name: $("#first_name").val(),
+				last_name: $("#last_name").val(),
+				email: $("#email").val(),
+				comments: $("#comments").val()
+			};
+			console.log(formbody);
+			$.post("/send_form_email", formbody, function(data){
 
-
-
-			// $.ajax({
-			// 	type: 'POST',
-			// 	data: $("#email_form").serializeArray(),
-			// 	url: 'send_form_email.php'
-			// }).done(function(msg){
-			// 	console.log(msg);
-			// });
+				$("#first_name").val("");
+				$("#last_name").val("");
+				$("#email").val("");
+				$("#comments").val("");
+				console.log(data.rejected.length == 0);
+				if (data.rejected.length == 0) {
+					$("#successPost").css({
+						'display' : 'block'
+					})
+				}
+				console.log("email has been sent");
+				console.log(data);
+			});
 
 		});
 });

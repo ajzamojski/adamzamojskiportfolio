@@ -60,21 +60,23 @@
 		    </div>
 		    <div class="col-12">
 		      <form name="contactform" id="email_form" method="post" action="/send_form_email">
+		      		<div class="alert alert-success" role="alert" id="successPost">Email has been successfully sent</div>
+		      		<div class="alert alert-danger" role="alert" id="errorPost">email not sent, an error has occured</div>
 		      	  <div class="form-row">
 						    <div class="col">
-						      <input type="text" name="first_name" class="form-control" placeholder="First name">
+						      <input type="text" name="first_name" id="first_name" class="form-control" placeholder="First name">
 						    </div>
 						    <div class="col">
-						      <input type="text" name="last_name" class="form-control" placeholder="Last name">
+						      <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Last name">
 						    </div>
 						  </div>
 					  <div class="form-group">
 					    <label for="exampleFormControlInput1">Email address</label>
-					    <input type="email" name="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+					    <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com">
 					  </div>
 					  <div class="form-group">
 					    <label for="exampleFormControlTextarea1">Example textarea</label>
-					    <textarea name="comments" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+					    <textarea name="comments" class="form-control" id="comments" rows="3"></textarea>
 					  </div>
 					  <button class="btn btn-primary" id="formbutton" type="submit" value="Submit">Submit form</button>
 					</form>
@@ -82,7 +84,11 @@
 	  	</div>
 	  </div>
 	</section>
-
+	<footer class="footer">
+		<div class="container">
+			<span class="text-muted">Adam Zamojski Inc.</span>
+		</div>
+	</footer>
 
 
 	<script type="text/javascript" src="assets/javascript/index.js"></script>

@@ -58,11 +58,11 @@ module.exports = function(app) {
 			    if(err)
 			    {
 			      console.log(err);
-			      res.redirect('/');
+			      res.json(err);
 			    }else
 			    {
 			      console.log('Message send');
-			      res.redirect('/');
+			      res.json(info);
 			    }
 			  });
 
