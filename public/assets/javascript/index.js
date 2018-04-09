@@ -2,6 +2,28 @@
 
 // mouseover effects for portfolio tab
 $(document).ready(function() {
+		// **************** Qutoes effects ********************
+		let quotes = [ '"Learning never exhausts the mind."- Leonardo da Vinci', 
+					'"There is no substitute for hard work." Thomas Edison', 
+					'"No act of kindness, no matter how small, is ever wasted." Aesop',
+					'"It is during our darkest moments that we must focus to see the light." Aristotle',
+					'"Our virtues and our failings are inseparable, like force and matter. When they separate, man is no more." Nikola Tesla',
+					'"Life without love is like a tree without blossoms or fruit." Khalil Gibran',
+					'"If you cannot do great things, do small things in a great way." Napoleon Hill',
+					'"Honesty is the first chapter in the book of wisdom." Thomas Jefferson']
+		let counter = 0;
+
+		setInterval(function(){
+			if (counter == quotes.length) {
+				counter = 0;
+			}
+			$("#quotes").html("");
+			$("#quotes").html(quotes[counter])
+			$("#quotes").fadeIn('slow');		
+				counter++;
+
+		}, 6000)
+
 	// **************** Portfolio hover effects ********************
 		$('.wrapper').mouseover(function() {
 			if ($(window).width() > 752) {
