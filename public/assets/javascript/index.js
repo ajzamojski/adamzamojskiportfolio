@@ -40,16 +40,29 @@ $(document).ready(function() {
 			})
 		});
 
+		// Button click to submit form
 		$("#formbutton").click(function(event){
-			console.log("button has been clicked");
 			event.preventDefault();
+			$("#errorAllfields, #successPost, #errorPost").css({
+					'display' : 'none'
+			})
+			if ( ($("#first_name").val() == "") || 
+					 ($("#last_name").val() == "") || 
+					 ($("#email").val() == "") || 
+					 ($("#comments").val() == "") ) {
+				console.log("something is not filled out");
+				$("#errorAllfields").css({
+					'display' : 'block'
+					})
+				return;
+			}
+
 			let formbody = {
 				first_name: $("#first_name").val(),
 				last_name: $("#last_name").val(),
 				email: $("#email").val(),
 				comments: $("#comments").val()
 			};
-			console.log(formbody);
 			$.post("/send_form_email", formbody, function(data){
 
 				$("#first_name").val("");
@@ -62,8 +75,12 @@ $(document).ready(function() {
 						'display' : 'block'
 					})
 				}
+				else if (data.rejected.length > 0) {
+					$("#successPost").css({
+						'display' : 'errorPost'
+					})
+				}
 				console.log("email has been sent");
-				console.log(data);
 			});
 
 		});

@@ -251,6 +251,10 @@ form {
 	display: none;
 }
 
+#errorAllfields {
+	display: none;
+}
+
 /* Responsive adjustments
 -------------------------------------------------- */
 
