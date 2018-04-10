@@ -288,6 +288,17 @@ form {
 		font-size: 1em;
 	}
 }
+@media only screen and (max-width: 480px) { 
+	#titleinfo {
+		min-height: 340px;
+	}
+}
+@media only screen and (max-width: 680px) { 
+	#titleinfo {
+		min-height: 260px;
+	}
+}
+
 @media only screen and (max-width: 767px) { 
 
 	.technologiesused, .projecttitles, .projecttitles2 {
