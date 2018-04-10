@@ -6,28 +6,36 @@ $(document).ready(function() {
 		let quotes = [ '"Learning never exhausts the mind."- Leonardo da Vinci', 
 					'"There is no substitute for hard work." Thomas Edison', 
 					'"No act of kindness, no matter how small, is ever wasted." Aesop',
-					'"It is during our darkest moments that we must focus to see the light." Aristotle',
-					'"Our virtues and our failings are inseparable, like force and matter. When they separate, man is no more." Nikola Tesla',
+					'"The journey of a thousand miles begins with one step." Lao Tzu',
+					'"The secret of getting ahead is getting started." Mark Twain',
 					'"Life without love is like a tree without blossoms or fruit." Khalil Gibran',
-					'"If you cannot do great things, do small things in a great way." Napoleon Hill',
-					'"Honesty is the first chapter in the book of wisdom." Thomas Jefferson']
-		let counter = 0;
+					'"The only true wisdom is in knowing you know nothing." Socrates',
+					'"Honesty is the first chapter in the book of wisdom." Thomas Jefferson',
+					'"Everything has beauty, but not everyone sees it." Confucius', 
+					'"Being entirely honest with oneself is a good exercise." Sigmund Freud']
+		let counter = 1;
 
 		setInterval(function(){
 			if (counter == quotes.length) {
 				counter = 0;
 			}
-			$("#quotes").html("");
-			$("#quotes").html(quotes[counter])
-			$("#quotes").fadeIn('slow');		
+			$("#quotes").css({
+					'opacity':'0'
+			})
+
+			$("#quotes").text(quotes[counter]).animate({
+				'opacity':'1'
+			}, 4000);
+
 				counter++;
 
-		}, 6000)
+		}, 6000);
 
 	// **************** Portfolio hover effects ********************
 		$('.wrapper').mouseover(function() {
 			if ($(window).width() > 752) {
 			  $(this).find("img").css({
+			  	"transition":"all .2s ease-in",
 			  	"opacity" : ".3"
 			  });
 			  $(this).find("span").css({
