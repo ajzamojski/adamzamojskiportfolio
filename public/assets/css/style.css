@@ -289,7 +289,7 @@ form {
 	}
 }
 
-@media only screen and (max-width: 679px) and (min-width: 400px) { 
+@media only screen and (max-width: 679px) and (min-width: 280px) { 
 	#titleinfo {
 		min-height: 340px;
 	}
