@@ -288,12 +288,14 @@ form {
 		font-size: 1em;
 	}
 }
-@media only screen and (max-width: 400px) { 
+
+@media only screen and (max-width: 679px) and (min-width: 400px) { 
 	#titleinfo {
 		min-height: 340px;
 	}
 }
-@media only screen and (max-width: 680px) { 
+
+@media only screen and (max-width: 766px) and (min-width: 680px) { 
 	#titleinfo {
 		min-height: 260px;
 	}
