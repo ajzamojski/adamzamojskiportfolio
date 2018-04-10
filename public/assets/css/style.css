@@ -288,7 +288,7 @@ form {
 		font-size: 1em;
 	}
 }
-@media only screen and (max-width: 480px) { 
+@media only screen and (max-width: 400px) { 
 	#titleinfo {
 		min-height: 340px;
 	}
