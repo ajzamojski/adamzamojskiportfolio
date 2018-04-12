@@ -13,6 +13,7 @@ $(document).ready(function() {
 					'"Honesty is the first chapter in the book of wisdom." Thomas Jefferson',
 					'"Everything has beauty, but not everyone sees it." Confucius', 
 					'"Being entirely honest with oneself is a good exercise." Sigmund Freud']
+				shuffle(quotes);
 		let counter = 1;
 
 		setInterval(function(){
@@ -114,6 +115,25 @@ $(document).ready(function() {
 			});
 
 		});
+	//*****************Functions*************************\\
+	function shuffle(data) {
+    let ctr = data.length, temp, index;
+
+	// While there are elements in the array
+    while (ctr > 0) {
+	// Pick a random index
+        index = Math.floor(Math.random() * ctr);
+	// Decrease ctr by 1
+        ctr--;
+	// And swap the last element with it
+        temp = data[ctr];
+        data[ctr] = data[index];
+        data[index] = temp;
+	    }
+	    console.log(data);
+	    return data;
+	}
+
 });
 
 
