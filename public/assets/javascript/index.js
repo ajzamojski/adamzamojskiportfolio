@@ -14,6 +14,7 @@ $(document).ready(function() {
 					'"Everything has beauty, but not everyone sees it." Confucius', 
 					'"Being entirely honest with oneself is a good exercise." Sigmund Freud']
 				shuffle(quotes);
+				$("#quotes").html(quotes[0]);
 		let counter = 1;
 
 		setInterval(function(){
