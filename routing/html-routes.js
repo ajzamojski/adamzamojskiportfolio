@@ -28,15 +28,14 @@ module.exports = function(app) {
 	app.post("/send_form_email", function(req, res) {
 
 		console.log(req.body);
-		const oauth2Client = new OAuth2(process.env.CLIENT_ID, clientSecret: process.env.CLIENT_SECRET, // Client Secret
-     "https://developers.google.com/oauthplayground");
+		const oauth2Client = new OAuth2(process.env.CLIENT_ID, process.env.CLIENT_SECRET, "https://developers.google.com/oauthplayground");
 
 		oauth2Client.setCredentials({
 			     refresh_token: process.env.REFRESH_TOKEN
 			});
 
 		const accessToken = oauth2Client.getAccessToken();
-		
+
 			let transporter = nodeMailer.createTransport({
 				host: 'smtp.gmail.com',
 				port: 465,
