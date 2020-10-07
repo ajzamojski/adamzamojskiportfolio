@@ -37,9 +37,7 @@ module.exports = function(app) {
 		const accessToken = oauth2Client.getAccessToken();
 
 			let transporter = nodeMailer.createTransport({
-				host: 'smtp.gmail.com',
-				port: 465,
-				secure: true,
+				service: "gmail",
 			  auth: {
 			  		type: 'OAuth2',
 			  		user: "ajzamojski2@gmail.com",
