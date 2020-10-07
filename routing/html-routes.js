@@ -42,11 +42,11 @@ module.exports = function(app) {
 				secure: true,
 			  auth: {
 			  		type: 'OAuth2',
-			  		user: "ajzamojski2@gmail.com"
+			  		user: "ajzamojski2@gmail.com",
 			      clientId: process.env.CLIENT_ID,
 			      clientSecret: process.env.CLIENT_SECRET,
 			      refreshToken: process.env.REFRESH_TOKEN,
-          	accessToken: accessToken,
+          	accessToken: accessToken
 				},
 				tls: {
 				  rejectUnauthorized: false
