@@ -40,7 +40,7 @@ module.exports = function(app) {
 				from: req.body.first_name + " " + req.body.last_name + " " + req.body.email
 			}
 			);
-
+			console.log("setting mail options");
 			let mailOptions = 
 			  {
 			  	from: req.body.first_name + " " + req.body.last_name + " " + req.body.email,
