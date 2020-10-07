@@ -1,6 +1,8 @@
 require('dotenv').config();
 const path = require("path");
 const nodeMailer = require('nodemailer');
+const { google } = require("googleapis");
+const OAuth2 = google.auth.OAuth2;
 
 module.exports = function(app) {
 
@@ -26,14 +28,29 @@ module.exports = function(app) {
 	app.post("/send_form_email", function(req, res) {
 
 		console.log(req.body);
+		const oauth2Client = new OAuth2(process.env.CLIENT_ID, clientSecret: process.env.CLIENT_SECRET, // Client Secret
+     "https://developers.google.com/oauthplayground");
+
+		oauth2Client.setCredentials({
+			     refresh_token: process.env.REFRESH_TOKEN
+			});
+
+		const accessToken = oauth2Client.getAccessToken();
+		
 			let transporter = nodeMailer.createTransport({
 				host: 'smtp.gmail.com',
 				port: 465,
 				secure: true,
 			  auth: {
 			  		type: 'OAuth2',
+			  		user: "ajzamojski2@gmail.com"
 			      clientId: process.env.CLIENT_ID,
 			      clientSecret: process.env.CLIENT_SECRET,
+			      refreshToken: process.env.REFRESH_TOKEN,
+          	accessToken: accessToken,
+				},
+				tls: {
+				  rejectUnauthorized: false
 				}
 			},
 			{
