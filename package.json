@@ -14,7 +14,7 @@
     "dotenv": "5.0.1",
     "express": "4.16.2",
     "googleapis": "^61.0.0",
-    "nodemailer": "4.6.4",
+    "nodemailer": "6.4.16",
     "nodemon": "1.17.1",
     "path": "0.12.7"
   }
